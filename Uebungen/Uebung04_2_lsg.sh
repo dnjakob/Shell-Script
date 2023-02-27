@@ -7,9 +7,30 @@ if [[ -z $mins ]]; then
     exit 1
 fi
 
-hours=$(echo -n $(date +'%H %M') | cut -d" " -f1)
-minutes=$(echo -n $(date +'%H %M') | cut -d" " -f2)
+hours=$( date + '%H %M' | cut -d " " -f1 )
+# Stunden und Minuten aus "date", Custom-Format
+hours=${hours:1:1}
+# Diese Zeile sollte eigtl nicht notwendig sein! (Probleme mit führender
+# "0"!)
+minutes=$( date + '%H %M' | cut -d " " -f2 )
 
-zeitmins=$(( "$hours" * 60 + "$minutes" ))
+old_H=$hours
+old_M=$minutes
+# Alte Uhrzeit speichern
 
-echo "Test: $hours $minutes"
+zeitinmins=$(( "$hours" * 60 + "$minutes" ))
+# Umrechnen der Zeit in Minuten
+
+zeitinmins=$(( $zeitinmins + $mins ))
+# Addieren der gewünschten Zeit (oder subtrahieren)
+
+hours=$(( $zeitinmins / 60 ))
+minutes=$(( $zeitinmins % 60 ))
+# Zurückrechnen in HH:MM: Minutenzeit DIV 60 (Ganzzahldivision); Minutenzeit
+# MODULO 60 für die Minuten
+
+echo "Alte Uhrzeit: "$old_H":"$old_M""
+echo "test: $hours $minutes"
+# Ausgabe
+
+exit 0
