@@ -19,7 +19,7 @@ old_M=$minutes
 # Alte Uhrzeit speichern
 
 zeitinmins=$(( "$hours" * 60 + "$minutes" ))
-# Umrechen der Zeit in Minuten
+# Umrechnen der Zeit in Minuten
 
 zeitinmins=$(( $zeitinmins + $mins ))
 # Addieren der gewünschten Zeit (oder subtrahieren!)
