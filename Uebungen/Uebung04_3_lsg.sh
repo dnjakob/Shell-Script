@@ -18,6 +18,7 @@ if [[ $(( $a + $b >= $c )) && $(( $b + $c >= $a )) && $(( $a + $c >= $b )) ]]; t
     echo "Dieses Dreieck ist konstruierbar!"
 else
     echo "Dieses Dreieck ist nicht konstruierbar! Bitte logische Werte eintragen!"
+    exit 2
 fi
 
 exit 0
