@@ -15,10 +15,17 @@ fi
 
 
 if [[ $(( $a + $b )) -ge $c  ]] && [[ $(( $b + $c )) -ge $a ]] && [[ $(( $a + $c )) -ge $b ]]; then
-    echo "Dieses Dreieck ist konstruierbar!"
+    echo ""
 else
     echo "Dieses Dreieck ist nicht konstruierbar! Bitte logische Werte eintragen!"
     exit 2
 fi
 
+if [[ $a -eq $b ]] && [[ $a -eq $c ]]; then
+    echo "Dieses Dreieck ist gleichseitig!"
+elif [[ $a -ne $b ]] && [[ $a -ne $c ]]; then
+    echo "Dieses Dreieck ist ein allgemeines!"
+else
+    echo "Dieses Dreieck ist ein gleichschenkliges!"
+fi
 exit 0
