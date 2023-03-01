@@ -14,7 +14,7 @@ if [[ -z $a || -z $b || -z $c ]]; then
 fi
 
 
-if [[ $(( $a + $b >= $c )) && $(( $b + $c >= $a )) && $(( $a + $c >= $b )) ]]; then
+if [[ $(( $a + $b )) -ge $c  ]] && [[ $(( $b + $c )) -ge $a ]] && [[ $(( $a + $c )) -ge $b ]]; then
     echo "Dieses Dreieck ist konstruierbar!"
 else
     echo "Dieses Dreieck ist nicht konstruierbar! Bitte logische Werte eintragen!"
