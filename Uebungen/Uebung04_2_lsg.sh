@@ -8,23 +8,31 @@ if [[ -z $mins ]]; then
 fi
 
 hours=$( date "+%-H" )
-
 minutes=$( date "+%-M" )
+seconds=$( date "+%s" )
 
 old_H=$hours
 old_M=$minutes
 # Alte Uhrzeit speichern
+new_M=
 
 zeitinmins=$(( "$hours" * 60 + "$minutes" ))
 # Umrechnen der Zeit in Minuten
 
-zeitinmins=$(( $zeitinmins + $mins ))
-# Addieren der gewünschten Zeit (oder subtrahieren!)
+if [[ $mins -ge 0 ]]; then
+    zeitinmins=$(( $zeitinmins + $mins ))
+    hours=$(( ($zeitinmins / 60) % 24 ))
+    minutes=$(( $zeitinmins % 60 ))
+    # Zurückrechnen in HH:MM: Minutenzeit DIV 60 (Ganzzahldivision); Minutenzeit
+    # MODULO 60 für die Minuten
+else
+    mins=$(( $mins * 60 ))
+    seconds=$(( $seconds + $mins ))
+    new_M=$(( $seconds / 60 ))
+    hours=$(( (($new_M / 60) % 24) + 1 ))
+    minutes=$(( $new_M % 60 ))
+fi
 
-hours=$(( ($zeitinmins / 60) % 24 ))
-minutes=$(( $zeitinmins % 60 ))
-# Zurückrechnen in HH:MM: Minutenzeit DIV 60 (Ganzzahldivision); Minutenzeit
-# MODULO 60 für die Minuten
 if [[ ${#hours} -eq 1 ]]; then
     hours="0"$hours
 fi
