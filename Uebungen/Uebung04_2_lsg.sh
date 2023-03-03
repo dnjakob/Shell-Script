@@ -29,10 +29,7 @@ else
     mins=$(( $mins * 60 ))
     seconds=$(( $seconds + $mins ))
     new_M=$(( $seconds / 60 ))
-    hours=$(( (($new_M / 60) % 24) + 1 ))
-    if [[ $hours -eq 24 ]]; then
-        hours=$(( $hours % 24 ))
-    fi
+    hours=$(( (($new_M / 60) + 1 ) % 24 ))
     minutes=$(( $new_M % 60 ))
 fi
 
