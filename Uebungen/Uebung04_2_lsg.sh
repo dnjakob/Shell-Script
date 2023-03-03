@@ -15,6 +15,7 @@ old_H=$hours
 old_M=$minutes
 # Alte Uhrzeit speichern
 new_M=
+twentyfour=1
 
 zeitinmins=$(( "$hours" * 60 + "$minutes" ))
 # Umrechnen der Zeit in Minuten
@@ -30,6 +31,9 @@ else
     seconds=$(( $seconds + $mins ))
     new_M=$(( $seconds / 60 ))
     hours=$(( (($new_M / 60) % 24) + 1 ))
+    if [[ $hours -eq 24 ]]; then
+        hours=$(( $hours % 24 ))
+    fi
     minutes=$(( $new_M % 60 ))
 fi
 
