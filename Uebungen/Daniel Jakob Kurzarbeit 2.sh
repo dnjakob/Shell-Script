@@ -5,15 +5,15 @@ j=0
 k=0
 
 while [[ $j -le 15 ]]; do
+    i=0
     while [[ $i -le 15 ]]; do
-     echo "$(tput setaf $k)VG $(tput sgr0)"
+     echo -n "$(tput setaf $k)VG $(tput sgr0)"
      i=$(( $i + 1 ))
-     j=$(( $j + 1 ))
      k=$(( $i * $j ))
     done
-    echo "$(tput setab $k)VG $(tput sgr0)"
     j=$(( $j + 1 ))
     k=$(( $i * $j ))
+    echo $'\n'
 done
 
 i=0
@@ -21,14 +21,15 @@ j=0
 k=0
 
 while [[ $j -le 15 ]]; do
+    i=0
     while [[ $i -le 15 ]]; do
-     echo "$(tput setaf $k)HG $(tput sgr0)"
+     echo -n "$(tput setab $k)HG $(tput sgr0)"
      i=$(( $i + 1 ))
      k=$(( $i * $j ))
     done
-    echo "$(tput setab $k)HG $(tput sgr0)"
     j=$(( $j + 1 ))
     k=$(( $i * $j ))
+    echo $'\n'
 done
 
 exit 0

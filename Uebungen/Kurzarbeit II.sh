@@ -9,7 +9,7 @@ for ((i = 0; i <= 15; i++)); do
         k=$(( $i * $j ))
         echo -n "$(tput setaf $k)VG $(tput sgr0)"
     done
-    echo \n
+    echo $'\n'
 done
 
 for ((i = 0; i <= 15; i++)); do
@@ -17,7 +17,7 @@ for ((i = 0; i <= 15; i++)); do
         k=$(( $i * $j ))
         echo -n "$(tput setab $k)HG $(tput sgr0)"
     done
-    echo \n
+    echo $'\n'
 done
 
 exit 0
