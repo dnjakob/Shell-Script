@@ -53,3 +53,26 @@ Tools zur Datei-Erkennung:
     default installiert!
 -   find: Umfangreiches Dateisuch-Tool; schon vorher besprochen
 -   grep: Tool zum Untersuchen von Text **in** Dateien
+
+## 5) Neue Benutzer, Gruppen, Zugriffsrechte
+
+-   useradd [user]: legt neuen Benutzer an. Muss mit Option -m benutzt werden,
+    um auch ein Home-Verzeichnis anzulegen
+-   passwd [user]: Ändert/erstellt das Passwort des aktuellen/angegebenen
+    Users (nur root!)
+-   groupadd [Gruppe]: legt eine neue Benutzergruppe an. Eingetragen in
+    /etc/groups
+-   usermod -a -G [Gruppe] [user]: fügt User der Gruppe hinzu
+-   groups [user]: Liste aller Gruppen, in der sich der User befindet
+-   getent group [Gruppe]: Liste aller Benutzer der entsprechenden Gruppe
+
+-   Zugriffsrechte: Nach dem ersten Bit (ID-Bit) stehen die nächsten 3x3 Bits
+    einer Datei bei der Ausgabe von 'ls -l' für:
+    -   Rechte für den Benutzer selbst (rwx - Lese/Schreib/Ausführrechte)
+    -   Rechte für Angehörige derselben Gruppe
+    -   Rechte für alle anderen ("other")
+-   Für Verzeichnisse gilt:
+    -   x steht für "Wer darf ins Verz. wechseln?"
+    -   r steht für "Liste der Dateien ermitteln"
+    -   rx: Dateinfos lesbar
+    -   wx: Neue Dateien anlegbar, Dateien löschbar
