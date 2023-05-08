@@ -76,3 +76,29 @@ Tools zur Datei-Erkennung:
     -   r steht für "Liste der Dateien ermitteln"
     -   rx: Dateinfos lesbar
     -   wx: Neue Dateien anlegbar, Dateien löschbar
+
+-   Setuid-bit: Bit im ersten Rechte-Triplet von Dateien, das gesetzt werden
+    kann, um z.B. Programme *immer* unter ihrem Eigentümer-Login zu starten.
+    Bsp.: rws für das User-Triplet bedeutet: rwx + dieses gesetzte Setuid-Bit.
+    rwS bedeutet: rw- + Setuid-Bit
+-   Setgid-bit: Bit im *zweiten* Rechte-Triplet von Dateien, dass, äquivalent
+    zum setuid-Bit, z.B. Programm *immer* unter der Gruppe ihres Eigentümers
+    gestartet werden. Bsp.: -rwxrws für gesetztes x-Bit in der Gruppe oder
+    -rwxrwS für ein ungesetztes Gruppen-x.
+    Weitere Funktion: Wenn ein Setgid-Bit für ein Verzeichnis gesetzt ist, wird
+    die Gruppe aller neu erstellten Dateien darin auch die Gruppe des
+    Verzeichnisses sein. Dies ist praktisch, um z.B. bei Gruppenarbeit nicht 
+    immer die Gruppe ändern zu müssen.
+-   Sticky-bit: wird im letzten Triplet z.B. bei Verzeichnissen gesetzt (z.B.
+    drwxrwxrwt), um bei "offenen" Verzeichnissen (z.B. Temp-Verzeichnisse) zu 
+    forder, dass nur bei Eigentümer einer Datei diese auch wieder löschen darf.
+    (Theoretisch) gibt es wieder die Unterscheidung "t" oder "T" für gesetztes
+    bzw. nicht gesetztes darunterliegendes "x"-Others-Bit.
+
+-   Neu angelegte Dateien bekommen die Default-Rechte, die die sogenannte
+    **umask** vorgibt. Der Wert, der mit **umask** gespeichert werden kann, wird
+    von 666 (bzw. 777 für Verzeichnisse) abgezogen, um die Default-Rechte, mit
+    denen neu angelegte Dateien ausgestattet sind, zu erhalten. Die Einstellung
+    erfolgt meist in */etc/bashrc* oder in */etc/profile*.
+
+## Linux-Dateistruktur
