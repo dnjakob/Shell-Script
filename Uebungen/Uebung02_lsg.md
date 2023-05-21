@@ -26,3 +26,4 @@ getrennter Output: erster Grep wird in Datei geschrieben (Stdout); zweiter Grep 
 Regular Expressions in grep: Caret (^) steht für "Am Anfang der Zeile"; "." steht eigentlich für EIN beliebiges Zeichen; wenn der explizite Punkt verlangt ist, muss man ihn mittels Backslash (\) "escapen". Es wird also hier gesucht nach einem Punkt am Anfang der Zeile!
 
 ## Aufgabe 4
+    sudo grep -rl 'root:x:0:0:root:/root:/bin/bash' /etc
