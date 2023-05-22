@@ -46,6 +46,8 @@ Datei-Typen werden meistens in einer MIME-Typen-Datenbank festgehalten; diese
 ist von Distribution zu Distribution aber unterschiedlich!
 
 Tools zur Datei-Erkennung:
+-   file: Versucht, anhand von Endung, Bit/Byte-Signatur etc. die Art der Dateien
+    zu ermitteln
 -   which: Sucht nach einem Kommando und liefert den genauen Ort desselben.
 -   whereis: Sucht in den $PATH - Verzeichnissen
 -   locate: Schnelle Suche nach Dateien; greift auf einen Index zurück, der
