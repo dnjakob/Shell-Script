@@ -23,3 +23,32 @@ Um laufende Prozesse im System anzuzeigen, gibt es viele Hilfsmittel:
 - 'top': Zeigt laufende Prozesse kontinuierlich an (upgedatet alle x Sek.) und
   bietet noch weitere Infos wie CPU/Mem-Ausschöpfung und Zusammenfassungen
 - weitere, ausgefeile Tools wie z.B. 'btop'
+
+## Prozesse beenden
+Laufende Prozesse kann man auf verschiedene Arten "manuell" beenden, falls das 
+Programm nicht selbst sauber zu Ende läuft oder einen Fehler aufweist:
+- 'kill [PID]': Sendet ein sogenanntes SIGTERM-Signal an den Prozess und beendet
+  ihn damit in den meisten Fällen. Hierzu ist notwendig, die Prozess-ID (PID) zu
+  wissen, die man durch 'ps aux´ und ähnlichem herausfinden kann.
+- 'xkill': Ermöglicht es, durch einen Mausklick, grafische Programme/Fenster zu 
+  "killen"
+- 'kill -9 [PID]': Sendet das sogenannte SIGKILL-Signal an den Prozess und 
+  beendet ihn __sofort__, ohne dass dem Programm irgendwelche Möglichkeiten
+  bleiben, Daten zu speichern, Medien zu unmounten etc.. Sollte nur in
+  Extremfällen, wenn sonst nichts hilft, verwendet werden!
+- 'killall [-9] [Prozessname]': Killt namentlich benannte Prozesse (unter
+  Umständen auch mehrere). Die Option "-9" sendet wiederum ein SIGKILL- anstelle
+  eines SIGTERM-Signal. Nicht immer zuverlässig; eindeutige
+  Prozess-Identifikation geschieht immer über die Prozess-ID.
+- Falls die ganze grafische Oberfläche hängt, gibt es die Möglichkeit, auf die
+  TTY-Konsole zu wechseln. Bei einer normalen Installation wäre dies möglich
+  mit STRG + ALT + FX, wobei FX für die F-Tasten von F3 bis F7 stehen (F1 und F2 
+  sind schon belegt durch den Login-Manager und das grafische System). Bei
+  unserer Installation in VirtualBox ist diese Kombination der Host-Key
+  (Standard: Rechte STRG-Taste) plus FX.
+  Dort kann man sich einloggen und mit den bekannten Mitteln versuchen, den 
+  hängenden Prozess zu beenden.
+- Falls gar nichts mehr hilft und sogar die Tastatur bzw. Maus hängt, kann man
+  immer noch, bei Rechnern, die sich im Netzwerk befinden, versuchen, sich 
+  remote einzuloggen, z.B. per SSH. Mit entsprechenden User-Rechten und den
+  bekannten Tools kann man dann noch so auf Fehlersuche gehen!
