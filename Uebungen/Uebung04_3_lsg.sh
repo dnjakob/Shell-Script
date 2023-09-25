@@ -17,7 +17,7 @@ fi
 if [[ $(( $a + $b )) -ge $c  ]] && [[ $(( $b + $c )) -ge $a ]] && [[ $(( $a + $c )) -ge $b ]]; then
     echo ""
 else
-    echo "Dieses Dreieck ist nicht konstruierbar! Bitte logische Werte eintragen!"
+    echo "Dieses Dreieck ist nicht konstruierbar, bitte logische Werte eintragen!"
     exit 2
 fi
 
