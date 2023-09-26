@@ -1,4 +1,4 @@
-# Regular Expressions
+# Regular Expressionss
 
 werden verwendet z.B. im Serial Editor __sed__ oder auch im Text-Suchtool
 __grep__: hier muss eventuell die Option _-E_ oder _-P_ (extended bzw. 
