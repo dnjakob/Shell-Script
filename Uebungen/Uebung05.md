@@ -7,16 +7,24 @@ Theorie-Verzeichnis
 ### a)
 Finde den String "Datei"
 
+grep "Datei" netzwerk.md
+
 ### b)
 Finde nun das genaue Wort "Datei"
 
+grep -w "Datei" netzwerk.md
+
 ### c)
 Finde alle Angaben von IPs (IP4s)
+
+grep -P "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" netzwerk.md
 
 ### d)
 Finde die Anzahl der Vorkommen von "Addresse" (klein- und großgeschrieben)
 Tip: grep -o liefert Ergebnisse einzeln auf eigenen Zeilen zurück; grep -c
 liefert die Anzahl der Treffer(zeilen) zurück
+
+grep -w -o "[Aa]dresse" netzwerk.md | wc -w
 
 ### e)
 Finde alle Wörter, die ein Doppel-"t" sowie ein Doppel-"l" beinhalten
