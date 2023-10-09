@@ -35,3 +35,12 @@ Perl-style regular expressions) angegeben werden!
   ursprüngliche Bedeutung gebraucht wird. Ein Punkt wird also nur zu einem Punkt 
   (im Gegensatz zu: beliebiges Zeichen), indem man ihm einen Backslash 
   voranstellt, also "\.". Analoges gilt auch für z.B. "?, +" etc.
+* Es gibt auch "Kurzversionen" von Zeichen-Klassen, die mit einem Backslash 
+  beginnen:
+  - \s erfasst alles, was "Whitespace" ist (Leerzeichen, Tabulatoren)
+  - \S erfasst das Gegenteil - alle non-Whitespaces
+  - \d erfasst alle Ziffern - analog zu [0-9]
+  - \D erfasst das Gegenteil - analog zu [^0-9]
+  - \w erfasst alle "Wort"-Charaktere - analog zu [a-zA-Z0-9]
+  - \W erfasst das Gegenteil - analog zu [^a-zA-Z0-9]. Damit können gezielt 
+    
