@@ -30,8 +30,14 @@ grep -w -o "[Aa]dresse" netzwerk.md | wc -w
 Finde alle Wörter, die ein Doppel-"t" sowie ein Doppel-"l" beinhalten
 (in dieser Reihenfolge)
 
+grep "\w*tt\w*ll\w*" netzwerk.md
+
 ### f)
 Finde alle Wörter, die mit "s" beginnen und mit "n" enden
 
+grep -w "[Ss]\w*[Nn]" netzwerk.md
+
 ### g)
 Finde alle Strings, die eingeklammert "()" sind
+
+grep -P "\(.+?\)" netzwerk.md

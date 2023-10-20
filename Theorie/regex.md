@@ -43,4 +43,19 @@ Perl-style regular expressions) angegeben werden!
   - \D erfasst das Gegenteil - analog zu [^0-9]
   - \w erfasst alle "Wort"-Charaktere - analog zu [a-zA-Z0-9]
   - \W erfasst das Gegenteil - analog zu [^a-zA-Z0-9]. Damit können gezielt 
-    
+* Erfassen von non-printable characters:
+  - \t für Tabulatoren
+  - \r für Carriage Return (Wagenrücklauf)
+  - \n für Line Feed (Zeilenvorschub)
+  Bemerkung: Eine neue Zeile wird, je nach OS, anders gekennzeichnet: 
+  - Windows: \r\n
+  - MacOS: \r
+  - Linux\Unix: \n
+* Ankerzeichen: 
+  Man kann Zeichenketten am Anfang oder am Ende der Zeile suchen: 
+  '^' für den Anfang der Zeile
+  '$' für das Ende der Zeile
+* Wortbegrenzungen:
+  - \< repräsentiert den Anfang eines Wortes 
+  - \> steht für das Ende des Wortes
+  - \b entweder Anfang oder Ende eines Wortes
