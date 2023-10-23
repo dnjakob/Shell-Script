@@ -59,3 +59,12 @@ Perl-style regular expressions) angegeben werden!
   - \< repräsentiert den Anfang eines Wortes 
   - \> steht für das Ende des Wortes
   - \b entweder Anfang oder Ende eines Wortes
+* Gruppierungen:
+Gruppen können in runde Klammern eingefasst werden, um sie weiter mit Regex 
+verarbeiten zu können. 'John (Reginald )?Smith" findet sowohl "John Smith" als 
+auch "John Reginald Smith". 'John (Reginald)? Smith' findet allerdings nicht den
+vollen ausgeschriebenen Namen, da dann ein Leerzeichen (hinter "Reginald") fehlt!
+* Referenzen zu Klammern: 
+Einmal gesetzt, können Regex-Teile in runden Klammern auch weiter verwendet bzw. 
+referenziert werden mit '\1, \2, ' etc; das erste Klammerpaar wird mit '\1' 
+angesprochen usw.
