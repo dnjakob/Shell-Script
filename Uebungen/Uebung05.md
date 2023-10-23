@@ -41,3 +41,34 @@ grep -w "[Ss]\w*[Nn]" netzwerk.md
 Finde alle Strings, die eingeklammert "()" sind
 
 grep -P "\(.+?\)" netzwerk.md
+
+## Aufgabe 2
+Zur Abwechslung suchen wir nun einmal in der Datei `dateien.md`
+### a)
+Finde alle Vorkommen von Markdown-Unterüberschriften - d.h. die Zeile muss mit
+einem `##` anfangen!
+
+### b)
+Finde nun (übergeordnete, nicht-geschachtelte) Markdown-Listeneinträge. Wieviele
+davon gibt es?
+
+### c)
+Finde die Zeilen, die mit einem Punkt oder einem Ausrufezeichen enden!
+
+### d)
+Finde die Vorkommen des Wortes "default". Dabei soll Groß/Kleinschreibung
+unberücksichtigt bleiben - und es soll auch wirklich nur das Wort markiert
+werden!
+
+### e)
+Finde die Strings "werden ... einem"; wobei die Punkte für "alles, was dort
+dazwischen stehen kann" stehen - z.B. "werden mit einem", "werden bei einem"
+usw.
+
+### f)
+Kurzer Rückausflug zur `netzwerk.md`: Finde die dort enthaltene IP-Addresse
+nochmals, mit einer jetzt möglichst etwas verfeinerten Methode!
+
+### g)
+Finde alle Vorkommnisse von je zwei Strings auf einer Zeile, die mit "der"
+beginnen (also "der...der")
