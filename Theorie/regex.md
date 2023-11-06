@@ -72,3 +72,14 @@ angesprochen usw.
 Verschiedene Begriffe können als Alternativen gesucht werden mit z.B.
 'hund|katze'. Dabei kann eines oder mehrere davon zutreffen. Auch mehrfache 
 Auswahl ist möglich; z.B. 'hund|katze|maus'.
+* Lookahead
+Durch Negative/positive Look-aheads lassen sich Dinge ausschliessen oder 
+beschränken, die im folgenden Regex eigentlich zulässig wären.
+Beispiel: '\b4(?!000)\d\d\d\b' findet (vierstellige) Zahlen, die mit einer "4"
+beginnen, schliesst aber "4000" aus. Obiges Regex lässt sich also lesen wie: 
+"Wortbeginn, dann eine 4, dann, wenn drei Nullen folgen, schliesse diese Zahl 
+aus, ansonsten können drei beliebige Ziffern folgen. Danach Wortende."
+Die zu verwendende Syntax ist also '(?!x)' für einen negativen Lookahead wie
+gerade beschrieben.
+Ein Positives Lookahead funktioniert genau andersherum; '(?=x)' schliesst eben nur 
+die Sachen ein, die mit "x" gematched werden.
