@@ -68,3 +68,7 @@ vollen ausgeschriebenen Namen, da dann ein Leerzeichen (hinter "Reginald") fehlt
 Einmal gesetzt, können Regex-Teile in runden Klammern auch weiter verwendet bzw. 
 referenziert werden mit '\1, \2, ' etc; das erste Klammerpaar wird mit '\1' 
 angesprochen usw.
+* Alternation
+Verschiedene Begriffe können als Alternativen gesucht werden mit z.B.
+'hund|katze'. Dabei kann eines oder mehrere davon zutreffen. Auch mehrfache 
+Auswahl ist möglich; z.B. 'hund|katze|maus'.
