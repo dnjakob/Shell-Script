@@ -80,7 +80,21 @@ Kurzer Rückausflug zur `netzwerk.md`: Finde die dort enthaltene IP-Addresse
 nochmals, mit einer jetzt möglichst etwas verfeinerten Methode!
 
 
-
 ### g)
 Finde alle Vorkommnisse von je zwei Strings auf einer Zeile, die mit "der"
 beginnen (also "der...der")
+
+
+### h)
+Finde Vorkommen von Wörtern, die mit "Datei-" starten und mit "Endungen",
+"Erkennung" oder "Typen" enden!
+
+grep -E "\bDatei-(Endungen|Erkennung|Typen)\b" dateien.md
+
+### i)
+Finde die Zeilen, in denen die Sticky-, Setuid- und Setgid- "bit"s vorgestellt
+werden! (nur die erste Zeile!)
+
+grep -E "^- (Setuid|Setgid|Sticky)-bit" dateien.md
+
+"Am Zeilenanfang steht ein Bindestrich, gefolgt von einem Leerzeichen, gefolgt von den drei zu suchenden Begriffen"
