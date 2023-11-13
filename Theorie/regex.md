@@ -83,3 +83,11 @@ Die zu verwendende Syntax ist also '(?!x)' für einen negativen Lookahead wie
 gerade beschrieben.
 Ein Positives Lookahead funktioniert genau andersherum; '(?=x)' schliesst eben nur 
 die Sachen ein, die mit "x" gematched werden.
+* Lookbehind
+Negative/positive Look-behinds funktionieren ähnlich wie die Look-aheads; es
+lassen sich Ergebnisse ausschliessen, denen bestimmte Regex-Muster  **vorangehen**!
+Beispiel: '(?<=[A-Z]\w* )Smith' findet z.B. "Harold Smith", nicht aber "going to 
+Smith Francis" - d.h. Smith als Nachname wird gefunden; Smith als Beruf aber 
+nicht!
+Negative Lookbehinds funktioniert wiederum andersherum; '(?<!x)' (im Gegensatz zu
+vorher: '(?<=x)') liefert Ergebnisse, bei denen der Regex im Vorfeld nicht zutrifft!
