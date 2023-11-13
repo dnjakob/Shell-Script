@@ -83,6 +83,9 @@ Die zu verwendende Syntax ist also '(?!x)' für einen negativen Lookahead wie
 gerade beschrieben.
 Ein Positives Lookahead funktioniert genau andersherum; '(?=x)' schliesst eben nur 
 die Sachen ein, die mit "x" gematched werden.
+Achtung: bash interpretiert die Zeichenfolge '(?!000)' oder ähnliches eventuell 
+als Befehl! Um dies zu vermeiden, verwende immer die einfachen Hochkommata '', um
+die RegEx einzuschliessen!
 * Lookbehind
 Negative/positive Look-behinds funktionieren ähnlich wie die Look-aheads; es
 lassen sich Ergebnisse ausschliessen, denen bestimmte Regex-Muster  **vorangehen**!
