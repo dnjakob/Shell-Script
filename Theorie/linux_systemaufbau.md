@@ -141,3 +141,30 @@ Auf der Kommandozeile kann man die Logdateien mit 'journalctl' abrufen;
 'journalctl -b' gibt die Meldungen seit dem letzten Bootvorgang aus. Eine 
 ähnliche Funktion wie mit den 'tail -f syslog' Live-Meldungen lässt sich 
 erreichen mit 'journalctl -b -f'.
+
+## Programme/Pakete installieren und aktuell halten - apt
+Der Ubuntu-eigene Paketmanager ist das sogenannte apt (apt-get, aptitude). Neben 
+der eigentlichen Installation von Paketen überprüft apt auch die Abhängigkeiten 
+von anderen Paketen und installiert diese (nach Einverständnis des Users) gleich 
+mit.
+Die Infrastruktur der Linux-Paketmanager ist so organisiert, dass an zentraler 
+Stelle (Ubuntu-Server, z.B.) sogenannte Paket-Repositories vorgehalten werden, 
+wo sich durch den Distributor geprüfte und für "fehlerfrei" befundene Pakete 
+befinden.
+Konfiguration und Listen dieser Repositories befinden sich in __/etc/apt__. Die 
+eigentlichen Repositories sind in __/etc/apt/sources.list__ gespeichert. In 
+dieser Datei kann man selbst zusätzliche Repositories einfügen - oder man macht 
+das mit dem Befehl `(sudo) add-apt-repository REPOSITORY`
+Befehle zur Benutzung von apt (meist ist ein "sudo" vorneweg nötig):
+- apt update | holt die neuesten Paket(versionen) aus den Repositories. Hier 
+wird aber noch nichts installiert/upgegraded
+- apt install paketname | installiert ein Paket und ggf. seine Abhängigkeiten
+- apt upgrade | alle Pakete aktualisieren
+- apt full-upgrade | wie oben; bei Bedarf Pakete deinstallieren
+- apt remove paketname | Paket entfernen
+- apt autoremove | nicht mehr benötigte Pakete entfernen
+- apt autoclean | zwischengespeicherte Pakete aus dem Cache löschen
+- apt list | verfügbare Pakete auflisten
+- apt list --installed | alle installierten Pakete auflisten
+- apt search suchbegriff | Pakete durchsuchen
+- apt show paketname | Infos zu Paket anzeigen
