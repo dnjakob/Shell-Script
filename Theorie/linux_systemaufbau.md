@@ -1,4 +1,4 @@
-# Aufbau des Linux-Betriebssystems
+-# Aufbau des Linux-Betriebssystems
 Linux, erstellt nach dem Vorbild UNIX, ist ein modernes Multitasking- 
 Multi-User-System.
 - Multitasking bedeutet, dass ein mehrere Prozesse (Programme + Daten im Speicher) 
