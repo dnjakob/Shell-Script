@@ -24,6 +24,6 @@ die mathematische Bibliothek geladen werden. Diese Option stellt auch per
 default die Anzahl der Nachkommastellen auf 20. Bei gewissen bc-Aufrufen steht 
 diese auf 0 und lässt so nur Ganzzahlrechnung zu, was zu Verwirrungen führen 
 kann!
-Weiterhin gibt es auch Kontrollstrukturen in bc wie "if...else, for(), while" 
+Weiterhin gibt es auch Kontrollstrukturen in bc wie "if...else, for(), while"
 etc., komplett mit Schleifensteuerungs-Statements wie "break, continue, halt" 
 etc. Funktionen lassen sich ebenfalls definieren.
