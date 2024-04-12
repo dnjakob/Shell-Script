@@ -43,15 +43,26 @@ awk '/[Pp]sychologist/' people.txt
 ### b)
 Wieviele weibliche Personen sind in der Liste? Und wie viele männliche?
 
+awk '/Female/{print $5}' people.txt | wc -l
+awk '/Male/{print $5}' people.txt | wc -l
+
 ### c)
 Gib die Datensätze aus, bei denen die Nachnamen länger als 7 Zeichen sind
+
+awk 'length($4) > 7 {print $4}' people.txt
 
 ### d)
 Gib jeden 8-ten Eintrag aus (Überschrift kann ignoriert werden)
 
+awk 'BEGIN{cnt = 1}{cnt % 8} == 0{print cnt, $0; cnt++}{cnt++}' people.txt
+
+awk '($1 % 8) == 0{print $0}' people.txt
+
 ### e)
 Suche alle "Nurse"s und ändere die ID/Nummer in der ersten Spalte, damit die
 Nummerierung wieder fortlaufend wird
+
+awk 'BEGIN{cnt = 1}/[Nn]urse/{$1 = cnt; print $0; cnt++}' people.txt
 
 ## Aufgabe 3
 
@@ -59,12 +70,20 @@ Nummerierung wieder fortlaufend wird
 Benutze awk als Rechner: Berechne z.B. 28.93 * 62.34 und lasse dir das Ergebnis
 korrekt formatiert mittels `printf` ausgeben
 
+awk 'BEGIN {a = 28.93; b = 62.34; printf "28.93 * 62.34 =%10.4f\n", (a * b) }'
+
 ### b)
 Gib alle email-Addressen aus, die auf `@example.org` enden
+
+awk '$6~/\w+@example.org/ {print $6}' people.txt
+
+awk '/@example.org/ {print $6}' people.txt
 
 ### c)
 Bei den Telefonnummern sind manche Einträge mit runden Klammern versehen.
 Entferne diese!
+
+awk '{gsub("[\(\)]", "", $7); print $0}' people.txt
 
 ### d)
 Mache jetzt aus `people.txt` ein `people.csv`, also ein Comma-Seperated-Value
