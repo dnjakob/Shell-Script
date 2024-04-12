@@ -56,6 +56,9 @@ Per Default wird die ganze Zeile ausgegeben, in der ein Muster zu finden ist:
 `awk '/a/ {print $0} input.txt` ist identisch zu 
 `awk '/a/' input.txt`
 
+Einzelne Felder lassen sich mit dem "Tilde"-Symbol verarbeiten:
+`awk '$5 ~ /a/ {print $5}' input.txt`
+
 Ausserdem lassen sich Variablen manipulieren und Bedingungen fordern:
 `awk '/a/ {++count} END {print "Anzahl: ", count}' input.txt`
 `awk 'length($0) > 18' input.txt    <- äquivalent zu:
@@ -75,6 +78,12 @@ __~__ oder verneint: __!~__.
 ## Regular Expressions
 Regex funktioniert in awk, an den passenden Stellen standardmässig; es gelten die 
 gleichen Sonderzeichen wie im Regex-Abschnitt.
+
+## Formatierte Ausgabe
+`printf` ermöglicht eine formatierte Ausgabe mit dem Spezialzeichen "%": `printf
+"Eine Zahl: %10.2", 123.45)` gibt die Zahl als Dezimalzahl aus mit insgesamt 
+10 Stellen, davon 2 Nachkommastellen. Für genaueres zu den Format-Specifiern: 
+siehe Internet!
 
 ## Arrays in awk.
 Es sind standardmässige Arrays/Vektoren und benannte Arrays möglich:
