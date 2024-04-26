@@ -7,18 +7,22 @@ if [[ -z $N ]]; then
     exit 1
 fi
 
-numbers=()
+numA=()
 
-for ((i = 0; i>=$N; i++)); do
-    numbers[$i]=$(($i + 2))
+for ((i = 0; i<=$N; i++)); do
+    numA[$i]=$(($i + 2))
 done
 
 halfN=$(($N / 2))
 
-while (); do
-    for ((j=1; j>=$halfN; j++)); do
-        if [[ numbers[$i] -eq $((numbers[0] * $numbers[$j]))]]; then
-            numbers[$i]=$i
-        fi
-        
-done
+for ((i=2; i<=$N; i++)); do
+    if [[ numA[$i] -eq 1 ]]; then
+        j=$(($i * $i))
+        while j < $N; do
+            for ((j))
+
+
+echo ${numA[@]}
+echo ${numB[@]}
+
+exit 0
