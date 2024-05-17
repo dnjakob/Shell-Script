@@ -36,6 +36,10 @@ die sich in jedem Unterverzeichnis befinden:
   Verweis auf die eigentliche Datei
   Links werden gekennzeichnet durch ein "l" am Anfang des ersten Blocks bei
   `ls -l`.
+- Device-Dateien: Unter /dev zu finden sind vom System angelegte sogenannte
+  Device-Dateien, mit denen ein direkt(er)er Zugriff auf einzelne Geräte möglich
+  ist. Block-Devices werden mit "b" am Anfang und Character-Devices mit "c" am
+  Anfang gekennzeichnet.
 
 ## 4) Datei -und MIME-Typen
 
@@ -79,9 +83,9 @@ Tools zur Datei-Erkennung:
   - rx: Dateiinfos lesbar
   - wx: Neue Dateien anlegbar, Dateien löschbar
 
-Mit `chmod` kann man diese Rechte ändern. Bsp.: `chmod g-x datei` entzieht die 
-Gruppen-Ausführrechte. Es gibt auch einen (besprochenen) Oktalmodus, der alle 
-Rechte gleichzeitig neu setzt: `chmod 644 datei` setzt gleichzeitig die 
+Mit `chmod` kann man diese Rechte ändern. Bsp.: `chmod g-x datei` entzieht die
+Gruppen-Ausführrechte. Es gibt auch einen (besprochenen) Oktalmodus, der alle
+Rechte gleichzeitig neu setzt: `chmod 644 datei` setzt gleichzeitig die
 User- und Gruppenrechte auf "rw" sowie die "others"-Rechte auf "r".
 
 - Setuid-bit: Bit im ersten Rechte-Triplet von Dateien, das gesetzt werden
@@ -110,9 +114,9 @@ User- und Gruppenrechte auf "rw" sowie die "others"-Rechte auf "r".
 
 ## 6) Das Linux-Dateisystem
 Das Dateisystem unter Linux ist anders organisiert als das in Windows. Es gibt
-keine "Laufwerksbuchstaben" wie C:, D: etc. sondern ein hierarchisches 
-Dateisystem, welches immer mit dem Wurzelverzeichnis ("/") beginnt. Außerdem 
-gibt es durch Standards festgelegte Verzeichnisse wie: 
+keine "Laufwerksbuchstaben" wie C:, D: etc. sondern ein hierarchisches
+Dateisystem, welches immer mit dem Wurzelverzeichnis ("/") beginnt. Außerdem
+gibt es durch Standards festgelegte Verzeichnisse wie:
 /bin : elementare Linux-Kommandos
 /boot : Boot- und Kernel-Dateien
 /dev : Device-Dateien
@@ -120,19 +124,26 @@ gibt es durch Standards festgelegte Verzeichnisse wie:
 /home : User-Verzeichnisse
 /lib[64]: Shared Libraries
 /lost+found: Dateifragmente, die sich nicht reparieren ließen
-/media : Meist mit Unterverzeichnissen wie /cdrom und /<usb-stick-name> zum 
-"mounten" von CDs und Sticks etc.. Diese Unterverzeichnisse befinden sich in 
+/media : Meist mit Unterverzeichnissen wie /cdrom und /<usb-stick-name> zum
+"mounten" von CDs und Sticks etc.. Diese Unterverzeichnisse befinden sich in
 manchen Distributionen auch direkt unterhalb des Wurzelverzeichnisses
 /opt: Optionale Zusatzpakete; wird heute selten genutzt
 /proc: Pseudo-Dateisystem zum Systemzustand
 /root: Heimatverzeichnis von root
 /run: Pseudo-System zu laufenden Prozessen
 /sbin: Kommandos zur Systemverwaltung
-/share: "architekturunabhängige" Dateien wie Konfigurationen etc. Meist unter 
+/share: "architekturunabhängige" Dateien wie Konfigurationen etc. Meist unter
 "/usr/share".
 /sys: Weiteres Pseudosystem zum Systemzustand
 /tmp: temporäre Dateien
-/usr: Anwendungsprogramme, grafisches System etc.
+/usr: Anwendungsprogramme, grafisches Sytem etc.
 /var: "Variable" Dateien wie Logdateien etc.
 
+Eigene Laufwerke, CDs/DVDs, Sticks können, wenn nicht automatisch geschehen, mit
+`mount [Gerätedatei] [Verzeichnis]` in den Verzeichnisbaum "eingehängt" werden.
+Das angegebene Verzeichnis sollte dabei vorab leer sein, um Daten nicht aus
+Versehen zu "verdecken".
+Vor dem Herunterfahren des Rechners bzw. Auswerfen des Gerätes sollte man
+unbedingt auch das Dateisystem wieder "unmounten": `umount [Verzeichnis]` oder
+umount [Gerätedatei]`.
 
